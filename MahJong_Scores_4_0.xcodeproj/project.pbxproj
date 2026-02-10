@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 90;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D40DAD6E2BC49B020075A3BA /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40DAD6D2BC49B020075A3BA /* PreviewData.swift */; };
+		D43E58982BF7A89900F295B4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D43E58972BF7A89900F295B4 /* README.md */; };
+		D43E59F02C03C39B00F295B4 /* RuleSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59EF2C03C39B00F295B4 /* RuleSetType.swift */; };
+		D43E59F22C03C3B400F295B4 /* RotateClockwiseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59F12C03C3B400F295B4 /* RotateClockwiseType.swift */; };
+		D43E59F42C03D31D00F295B4 /* RuleSetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59F32C03D31D00F295B4 /* RuleSetPickerView.swift */; };
+		D43E59F62C04B56700F295B4 /* RotateClockwisePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59F52C04B56700F295B4 /* RotateClockwisePickerView.swift */; };
+		D43E59FA2C060DFF00F295B4 /* TournamentTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59F92C060DFF00F295B4 /* TournamentTitleView.swift */; };
+		D43E59FC2C07FF9B00F295B4 /* CompleteAmericanGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59FB2C07FF9B00F295B4 /* CompleteAmericanGameView.swift */; };
+		D43E59FE2C0810BC00F295B4 /* LastTilePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59FD2C0810BC00F295B4 /* LastTilePickerView.swift */; };
+		D43E5A002C0810D800F295B4 /* JokersPresentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E59FF2C0810D800F295B4 /* JokersPresentPickerView.swift */; };
+		D43E5A042C0A69FE00F295B4 /* LastTileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E5A032C0A69FE00F295B4 /* LastTileType.swift */; };
+		D43E5A062C0A6A2C00F295B4 /* JokersPresentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E5A052C0A6A2C00F295B4 /* JokersPresentType.swift */; };
+		D44A271A2F353F4C00A1D9E0 /* TournamentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A27192F353F4C00A1D9E0 /* TournamentDTO.swift */; };
+		D44A27202F35402C00A1D9E0 /* SyncTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A271F2F35402C00A1D9E0 /* SyncTournamentView.swift */; };
+		D44A27222F3545DD00A1D9E0 /* TournamentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A271E2F35401300A1D9E0 /* TournamentAPIService.swift */; };
+		D44A27472F354B4300A1D9E0 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = D44A27462F354B4300A1D9E0 /* OpenAPIRuntime */; };
+		D44A274A2F354B6A00A1D9E0 /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = D44A27492F354B6A00A1D9E0 /* OpenAPIURLSession */; };
+		D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */; };
+		D47C0DF22BED60CE004905DA /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47C0DF12BED60CE004905DA /* Score.swift */; };
+		D48C3FB62BB07DC900EE3ABE /* MahJong_Scores_4_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB52BB07DC900EE3ABE /* MahJong_Scores_4_0App.swift */; };
+		D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FB72BB07DC900EE3ABE /* ContentView.swift */; };
+		D48C3FBC2BB07DCB00EE3ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */; };
+		D48C3FBF2BB07DCB00EE3ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */; };
+		D48C3FEB2BB0C5D100EE3ABE /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */; };
+		D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */; };
+		D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */; };
+		D48C3FF72BB205A600EE3ABE /* IndividualTournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */; };
+		D4F4905C2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F4905B2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift */; };
+		D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F490E12BBB2CFE00B6F474 /* DateToString.swift */; };
+		D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D4094C2F2F3556EB003C6872 /* openapi.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
+		D4094C302F3556EB003C6872 /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
+		D40DAD6D2BC49B020075A3BA /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		D43E58972BF7A89900F295B4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D43E59EF2C03C39B00F295B4 /* RuleSetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleSetType.swift; sourceTree = "<group>"; };
+		D43E59F12C03C3B400F295B4 /* RotateClockwiseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateClockwiseType.swift; sourceTree = "<group>"; };
+		D43E59F32C03D31D00F295B4 /* RuleSetPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleSetPickerView.swift; sourceTree = "<group>"; };
+		D43E59F52C04B56700F295B4 /* RotateClockwisePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateClockwisePickerView.swift; sourceTree = "<group>"; };
+		D43E59F92C060DFF00F295B4 /* TournamentTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentTitleView.swift; sourceTree = "<group>"; };
+		D43E59FB2C07FF9B00F295B4 /* CompleteAmericanGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteAmericanGameView.swift; sourceTree = "<group>"; };
+		D43E59FD2C0810BC00F295B4 /* LastTilePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastTilePickerView.swift; sourceTree = "<group>"; };
+		D43E59FF2C0810D800F295B4 /* JokersPresentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokersPresentPickerView.swift; sourceTree = "<group>"; };
+		D43E5A032C0A69FE00F295B4 /* LastTileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastTileType.swift; sourceTree = "<group>"; };
+		D43E5A052C0A6A2C00F295B4 /* JokersPresentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokersPresentType.swift; sourceTree = "<group>"; };
+		D44A27192F353F4C00A1D9E0 /* TournamentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDTO.swift; sourceTree = "<group>"; };
+		D44A271E2F35401300A1D9E0 /* TournamentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentAPIService.swift; sourceTree = "<group>"; };
+		D44A271F2F35402C00A1D9E0 /* SyncTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncTournamentView.swift; sourceTree = "<group>"; };
+		D44A27212F35407D00A1D9E0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGraphView.swift; sourceTree = "<group>"; };
+		D47C0DF12BED60CE004905DA /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		D48C3FB22BB07DC900EE3ABE /* MahJong_Scores_4_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MahJong_Scores_4_0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48C3FB52BB07DC900EE3ABE /* MahJong_Scores_4_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahJong_Scores_4_0App.swift; sourceTree = "<group>"; };
+		D48C3FB72BB07DC900EE3ABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
+		D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTournamentView.swift; sourceTree = "<group>"; };
+		D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTournamentView.swift; sourceTree = "<group>"; };
+		D4D23E6A2C0E1C310015819C /* MahJong-Scores-4_0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MahJong-Scores-4_0-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D4F4905B2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteTraditionalGameView.swift; sourceTree = "<group>"; };
+		D4F490E12BBB2CFE00B6F474 /* DateToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
+		D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTournament.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D48C3FAF2BB07DC900EE3ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				D44A274A2F354B6A00A1D9E0 /* OpenAPIURLSession in Frameworks */,
+				D44A27472F354B4300A1D9E0 /* OpenAPIRuntime in Frameworks */,
+			);
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D43E59EE2C03C36E00F295B4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D43E59EF2C03C39B00F295B4 /* RuleSetType.swift */,
+				D43E59F12C03C3B400F295B4 /* RotateClockwiseType.swift */,
+				D43E5A032C0A69FE00F295B4 /* LastTileType.swift */,
+				D43E5A052C0A6A2C00F295B4 /* JokersPresentType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		D44A27182F353F3D00A1D9E0 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D44A27192F353F4C00A1D9E0 /* TournamentDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		D44A271B2F353F5700A1D9E0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D44A27212F35407D00A1D9E0 /* README.md */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D47C0DEE2BEBF47D004905DA /* Game View */ = {
+			isa = PBXGroup;
+			children = (
+				D4F4905B2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift */,
+				D43E59FB2C07FF9B00F295B4 /* CompleteAmericanGameView.swift */,
+				D47C0DEF2BEBF4B3004905DA /* GameGraphView.swift */,
+				D43E59FD2C0810BC00F295B4 /* LastTilePickerView.swift */,
+				D43E59FF2C0810D800F295B4 /* JokersPresentPickerView.swift */,
+			);
+			path = "Game View";
+			sourceTree = "<group>";
+		};
+		D48C3FA92BB07DC900EE3ABE = {
+			isa = PBXGroup;
+			children = (
+				D43E58972BF7A89900F295B4 /* README.md */,
+				D48C3FB42BB07DC900EE3ABE /* MahJong_Scores_4_0 */,
+				D48C3FB32BB07DC900EE3ABE /* Products */,
+				D44A271B2F353F5700A1D9E0 /* API */,
+			);
+			sourceTree = "<group>";
+		};
+		D48C3FB32BB07DC900EE3ABE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FB22BB07DC900EE3ABE /* MahJong_Scores_4_0.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D48C3FB42BB07DC900EE3ABE /* MahJong_Scores_4_0 */ = {
+			isa = PBXGroup;
+			children = (
+				D4D23E6A2C0E1C310015819C /* MahJong-Scores-4_0-Info.plist */,
+				D48C3FB72BB07DC900EE3ABE /* ContentView.swift */,
+				D4094C2F2F3556EB003C6872 /* openapi.yaml */,
+				D4094C302F3556EB003C6872 /* openapi-generator-config.yaml */,
+				D48C3FE12BB07E9200EE3ABE /* Views */,
+				D48C3FE22BB07EC600EE3ABE /* Launch */,
+				D48C3FE32BB07EE000EE3ABE /* Model */,
+			);
+			path = MahJong_Scores_4_0;
+			sourceTree = SOURCE_ROOT;
+		};
+		D48C3FBD2BB07DCB00EE3ABE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FBE2BB07DCB00EE3ABE /* Preview Assets.xcassets */,
+				D40DAD6D2BC49B020075A3BA /* PreviewData.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D48C3FE12BB07E9200EE3ABE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FE52BB07FC600EE3ABE /* Tournament Views */,
+				D47C0DEE2BEBF47D004905DA /* Game View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D48C3FE22BB07EC600EE3ABE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FB52BB07DC900EE3ABE /* MahJong_Scores_4_0App.swift */,
+				D48C3FBB2BB07DCB00EE3ABE /* Assets.xcassets */,
+				D48C3FBD2BB07DCB00EE3ABE /* Preview Content */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		D48C3FE32BB07EE000EE3ABE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FEA2BB0C5D000EE3ABE /* Tournament.swift */,
+				D47C0DF12BED60CE004905DA /* Score.swift */,
+				D48C3FE92BB0802A00EE3ABE /* Utilities */,
+				D44A27182F353F3D00A1D9E0 /* DTO */,
+				D44A271E2F35401300A1D9E0 /* TournamentAPIService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D48C3FE52BB07FC600EE3ABE /* Tournament Views */ = {
+			isa = PBXGroup;
+			children = (
+				D48C3FEE2BB1FC8300EE3ABE /* TournamentView.swift */,
+				D48C3FF62BB205A600EE3ABE /* IndividualTournamentView.swift */,
+				D43E59F92C060DFF00F295B4 /* TournamentTitleView.swift */,
+				D48C3FF42BB2057200EE3ABE /* AddTournamentView.swift */,
+				D43E59F32C03D31D00F295B4 /* RuleSetPickerView.swift */,
+				D43E59F52C04B56700F295B4 /* RotateClockwisePickerView.swift */,
+				D44A271F2F35402C00A1D9E0 /* SyncTournamentView.swift */,
+			);
+			path = "Tournament Views";
+			sourceTree = "<group>";
+		};
+		D48C3FE92BB0802A00EE3ABE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D43E59EE2C03C36E00F295B4 /* Enums */,
+				D4F490E12BBB2CFE00B6F474 /* DateToString.swift */,
+				D4F490E52BBB3FF400B6F474 /* PrintTournament.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D48C3FB12BB07DC900EE3ABE /* MahJong_Scores_4_0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48C3FD82BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_4_0" */;
+			buildPhases = (
+				D48C3FAE2BB07DC900EE3ABE /* Sources */,
+				D48C3FAF2BB07DC900EE3ABE /* Frameworks */,
+				D48C3FB02BB07DC900EE3ABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MahJong_Scores_4_0;
+			packageProductDependencies = (
+				D44A27462F354B4300A1D9E0 /* OpenAPIRuntime */,
+				D44A27492F354B6A00A1D9E0 /* OpenAPIURLSession */,
+			);
+			productName = MJS;
+			productReference = D48C3FB22BB07DC900EE3ABE /* MahJong_Scores_4_0.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D48C3FAA2BB07DC900EE3ABE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					D48C3FB12BB07DC900EE3ABE = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = D48C3FAD2BB07DC900EE3ABE /* Build configuration list for PBXProject "MahJong_Scores_4_0" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D48C3FA92BB07DC900EE3ABE;
+			packageReferences = (
+				D44A27452F354B4300A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+				D44A27482F354B6A00A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
+				D44A274B2F354BB000A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
+			);
+			preferredProjectObjectVersion = 90;
+			productRefGroup = D48C3FB32BB07DC900EE3ABE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D48C3FB12BB07DC900EE3ABE /* MahJong_Scores_4_0 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D48C3FB02BB07DC900EE3ABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+				D43E58982BF7A89900F295B4 /* README.md in Resources */,
+				D48C3FBF2BB07DCB00EE3ABE /* Preview Assets.xcassets in Resources */,
+				D48C3FBC2BB07DCB00EE3ABE /* Assets.xcassets in Resources */,
+			);
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D48C3FAE2BB07DC900EE3ABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				D44A27222F3545DD00A1D9E0 /* TournamentAPIService.swift in Sources */,
+				D48C3FEB2BB0C5D100EE3ABE /* Tournament.swift in Sources */,
+				D43E5A062C0A6A2C00F295B4 /* JokersPresentType.swift in Sources */,
+				D40DAD6E2BC49B020075A3BA /* PreviewData.swift in Sources */,
+				D48C3FF72BB205A600EE3ABE /* IndividualTournamentView.swift in Sources */,
+				D47C0DF02BEBF4B3004905DA /* GameGraphView.swift in Sources */,
+				D48C3FB82BB07DC900EE3ABE /* ContentView.swift in Sources */,
+				D43E59FC2C07FF9B00F295B4 /* CompleteAmericanGameView.swift in Sources */,
+				D44A271A2F353F4C00A1D9E0 /* TournamentDTO.swift in Sources */,
+				D47C0DF22BED60CE004905DA /* Score.swift in Sources */,
+				D43E59F62C04B56700F295B4 /* RotateClockwisePickerView.swift in Sources */,
+				D43E5A042C0A69FE00F295B4 /* LastTileType.swift in Sources */,
+				D48C3FF52BB2057200EE3ABE /* AddTournamentView.swift in Sources */,
+				D43E59F22C03C3B400F295B4 /* RotateClockwiseType.swift in Sources */,
+				D43E59FE2C0810BC00F295B4 /* LastTilePickerView.swift in Sources */,
+				D48C3FEF2BB1FC8300EE3ABE /* TournamentView.swift in Sources */,
+				D43E5A002C0810D800F295B4 /* JokersPresentPickerView.swift in Sources */,
+				D44A27202F35402C00A1D9E0 /* SyncTournamentView.swift in Sources */,
+				D4F490E62BBB3FF400B6F474 /* PrintTournament.swift in Sources */,
+				D4F490E22BBB2CFE00B6F474 /* DateToString.swift in Sources */,
+				D4F4905C2BB5DA5500B6F474 /* CompleteTraditionalGameView.swift in Sources */,
+				D43E59F02C03C39B00F295B4 /* RuleSetType.swift in Sources */,
+				D43E59F42C03D31D00F295B4 /* RuleSetPickerView.swift in Sources */,
+				D43E59FA2C060DFF00F295B4 /* TournamentTitleView.swift in Sources */,
+				D48C3FB62BB07DC900EE3ABE /* MahJong_Scores_4_0App.swift in Sources */,
+			);
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D48C3FD62BB07DCB00EE3ABE /* Debug configuration for PBXProject "MahJong_Scores_4_0" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D48C3FD72BB07DCB00EE3ABE /* Release configuration for PBXProject "MahJong_Scores_4_0" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3SPAAQ6SK2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D48C3FD92BB07DCB00EE3ABE /* Debug configuration for PBXNativeTarget "MahJong_Scores_4_0" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MahJong_Scores_4_0/MahJong_Scores_4_0.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MahJong_Scores_4_0/Launch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MahJong-Scores-4_0-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goedman.MahJong-Scores-4-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D48C3FDA2BB07DCB00EE3ABE /* Release configuration for PBXNativeTarget "MahJong_Scores_4_0" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MahJong_Scores_4_0/MahJong_Scores_4_0.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MahJong_Scores_4_0/Launch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MahJong-Scores-4_0-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goedman.MahJong-Scores-4-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D48C3FAD2BB07DC900EE3ABE /* Build configuration list for PBXProject "MahJong_Scores_4_0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48C3FD62BB07DCB00EE3ABE /* Debug configuration for PBXProject "MahJong_Scores_4_0" */,
+				D48C3FD72BB07DCB00EE3ABE /* Release configuration for PBXProject "MahJong_Scores_4_0" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		D48C3FD82BB07DCB00EE3ABE /* Build configuration list for PBXNativeTarget "MahJong_Scores_4_0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48C3FD92BB07DCB00EE3ABE /* Debug configuration for PBXNativeTarget "MahJong_Scores_4_0" */,
+				D48C3FDA2BB07DCB00EE3ABE /* Release configuration for PBXNativeTarget "MahJong_Scores_4_0" */,
+			);
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D44A27452F354B4300A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+		D44A27482F354B6A00A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-urlsession";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		D44A274B2F354BB000A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-generator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D44A27462F354B4300A1D9E0 /* OpenAPIRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D44A27452F354B4300A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
+		};
+		D44A27492F354B6A00A1D9E0 /* OpenAPIURLSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D44A27482F354B6A00A1D9E0 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
+			productName = OpenAPIURLSession;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D48C3FAA2BB07DC900EE3ABE /* Project object */;
+}

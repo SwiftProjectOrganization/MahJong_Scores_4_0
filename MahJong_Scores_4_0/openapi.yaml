@@ -1,0 +1,194 @@
+openapi: 3.0.0
+info:
+  title: MahJong Scores API
+  version: 1.0.0
+  description: API for managing MahJong tournament scores
+servers:
+  - url: http://localhost:8080
+    description: Development server
+paths:
+  /tournaments:
+    get:
+      operationId: listTournaments
+      summary: List all tournaments
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tournament'
+    post:
+      operationId: createTournament
+      summary: Create a new tournament
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tournament'
+      responses:
+        '201':
+          description: Tournament created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+        '400':
+          description: Bad request
+  /tournaments/{tournamentId}:
+    get:
+      operationId: getTournament
+      summary: Get a tournament by ID
+      parameters:
+        - name: tournamentId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+        '404':
+          description: Tournament not found
+    put:
+      operationId: updateTournament
+      summary: Update a tournament
+      parameters:
+        - name: tournamentId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tournament'
+      responses:
+        '200':
+          description: Tournament updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tournament'
+        '404':
+          description: Tournament not found
+    delete:
+      operationId: deleteTournament
+      summary: Delete a tournament
+      parameters:
+        - name: tournamentId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Tournament deleted
+        '404':
+          description: Tournament not found
+components:
+  schemas:
+    Score:
+      type: object
+      required:
+        - id
+        - name
+        - game
+        - score
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        game:
+          type: integer
+        score:
+          type: integer
+    Tournament:
+      type: object
+      required:
+        - id
+        - scheduleItem
+      properties:
+        id:
+          type: string
+          format: uuid
+        rotateClockwise:
+          type: boolean
+        ruleSet:
+          type: string
+        startDate:
+          type: string
+        scheduleItem:
+          type: integer
+        lastGame:
+          type: integer
+        fpName:
+          type: string
+        spName:
+          type: string
+        tpName:
+          type: string
+        lpName:
+          type: string
+        windPlayer:
+          type: array
+          items:
+            type: string
+        currentWind:
+          type: string
+        players:
+          type: array
+          items:
+            type: string
+        winds:
+          type: array
+          items:
+            type: string
+        gameWinnerName:
+          type: string
+        ptScore:
+          type: object
+          additionalProperties:
+            type: integer
+        pgScore:
+          type: object
+          additionalProperties:
+            type: integer
+        windsToPlayersInGame:
+          type: object
+          additionalProperties:
+            type: string
+        playersToWindsInGame:
+          type: object
+          additionalProperties:
+            type: string
+        fpScores:
+          type: array
+          items:
+            $ref: '#/components/schemas/Score'
+        spScores:
+          type: array
+          items:
+            $ref: '#/components/schemas/Score'
+        tpScores:
+          type: array
+          items:
+            $ref: '#/components/schemas/Score'
+        lpScores:
+          type: array
+          items:
+            $ref: '#/components/schemas/Score'
