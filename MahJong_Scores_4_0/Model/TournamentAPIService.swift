@@ -17,7 +17,7 @@ class TournamentAPIService {
     var isConnected: Bool = false
     var lastError: String?
     
-    init(serverURL: String = "http://localhost:8080") {
+    init(serverURL: String = "http://Rob-Travel-M5.local:8080") {
         self.serverURL = URL(string: serverURL)!
     }
     
