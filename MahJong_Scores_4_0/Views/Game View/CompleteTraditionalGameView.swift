@@ -30,75 +30,65 @@ struct CompleteTraditionalGameView {
 
 extension CompleteTraditionalGameView: View {
     var body: some View {
-      VStack(spacing: 50) {
-        Text("Press `Rotate` until the game winner is on the top line. Then enter game scores and press `Save`.")
-          .font(.largeTitle)
-        VStack {
-          List {
-            HStack {
-              Spacer(minLength: 40)
-              Text("\(gameWinnerName):")
-                .multilineTextAlignment(.trailing)
-              Spacer()
-              TextField("Game score", text: $gameWinnerScore)
-                .focused($focusedField)
-                .multilineTextAlignment(.trailing)
-             Spacer(minLength: 60)
-            }
-            HStack {
-              Spacer(minLength: 40)
-              Text("\(gameSpName):")
-                .multilineTextAlignment(.trailing)
-              Spacer()
-              TextField("Game score", text: $gameSpScore)
-                .multilineTextAlignment(.trailing)
-             Spacer(minLength: 60)
-            }
-            HStack {
-              Spacer(minLength: 40)
-              Text("\(gameTpName):")
-                .multilineTextAlignment(.trailing)
-              Spacer()
-              TextField("Game score", text: $gameTpScore)
-                .multilineTextAlignment(.trailing)
-              Spacer(minLength: 60)
-            }
-            HStack {
-              Spacer(minLength: 40)
-              Text("\(gameLpName):")
-                .multilineTextAlignment(.trailing)
-              Spacer()
-              TextField("Game score", text: $gameLpScore)
-                .multilineTextAlignment(.trailing)
-              Spacer(minLength: 60)
-            }
+      Form {
+        Section {
+          Text("Press `Rotate` until the game winner is on the top line. Then enter game scores and press `Save`.")
+            .font(.title2)
+        }
+        Section {
+          HStack {
+            Text("\(gameWinnerName):")
+            Spacer()
+            TextField("Game score", text: $gameWinnerScore)
+              .focused($focusedField)
+              .multilineTextAlignment(.trailing)
+          }
+          HStack {
+            Text("\(gameSpName):")
+            Spacer()
+            TextField("Game score", text: $gameSpScore)
+              .multilineTextAlignment(.trailing)
+          }
+          HStack {
+            Text("\(gameTpName):")
+            Spacer()
+            TextField("Game score", text: $gameTpScore)
+              .multilineTextAlignment(.trailing)
+          }
+          HStack {
+            Text("\(gameLpName):")
+            Spacer()
+            TextField("Game score", text: $gameLpScore)
+              .multilineTextAlignment(.trailing)
           }
         }
         .keyboardType(.numberPad)
-        HStack {
-          Spacer()
-          Button("Cancel",
-                 role: .cancel) {
-            isCompleteGameViewDisplayed = false
-            dismiss()
+        Section {
+          HStack {
+            Spacer()
+            Button("Cancel",
+                   role: .cancel) {
+              isCompleteGameViewDisplayed = false
+              dismiss()
+            }
+            .buttonStyle(.bordered)
+            Button("Rotate") {
+              rotate()
+            }
+            .buttonStyle(.glassProminent)
+            .tint(.orange)
+            Spacer()
+            Button("Save") {
+              isCompleteGameViewDisplayed = false
+              save(tournament)
+            }
+            .disabled(anyFieldEmpty())
+            .buttonStyle(.glassProminent)
+            .tint(.blue)
+            Spacer()
           }
-          .buttonStyle(.bordered)
-          Button("Rotate") {
-            rotate()
-          }
-          .buttonStyle(.bordered)
-          Spacer()
-          Button("Save") {
-            isCompleteGameViewDisplayed = false
-            //print("Save pressed")
-            save(tournament)
-          }
-          .disabled(anyFieldEmpty())
-          .buttonStyle(.borderedProminent)
-          Spacer()
         }
-        Spacer()
-       }
+      }
       .onAppear {
         gameWinnerName = tournament.players![0]
         gameSpName = tournament.players![1]

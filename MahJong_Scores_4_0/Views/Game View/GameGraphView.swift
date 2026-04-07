@@ -10,7 +10,7 @@ import SwiftData
 import Charts
 
 struct GameGraphView {
-  @State var tournament: Tournament
+  var tournament: Tournament
 }
 
 extension GameGraphView: View {
@@ -48,7 +48,7 @@ extension GameGraphView: View {
     }
 
     return Chart {
-      ForEach(scores, id: \.name) { players in
+      ForEach(scores, id: \.id) { players in
           LineMark(
             x: .value("Game", players.game),
             y: .value("Score", players.score)

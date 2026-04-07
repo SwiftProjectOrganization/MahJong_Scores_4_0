@@ -303,6 +303,28 @@ struct SyncTournamentView: View {
       tournament.windsToPlayersInGame = tournamentDTO.windsToPlayersInGame
       tournament.playersToWindsInGame = tournamentDTO.playersToWindsInGame
       
+      // Restore scores from DTO
+      if let fpScoreDTOs = tournamentDTO.fpScores {
+        for dto in fpScoreDTOs {
+          tournament.fpScores?.append(FpScore(dto.name, dto.game, dto.score))
+        }
+      }
+      if let spScoreDTOs = tournamentDTO.spScores {
+        for dto in spScoreDTOs {
+          tournament.spScores?.append(SpScore(dto.name, dto.game, dto.score))
+        }
+      }
+      if let tpScoreDTOs = tournamentDTO.tpScores {
+        for dto in tpScoreDTOs {
+          tournament.tpScores?.append(TpScore(dto.name, dto.game, dto.score))
+        }
+      }
+      if let lpScoreDTOs = tournamentDTO.lpScores {
+        for dto in lpScoreDTOs {
+          tournament.lpScores?.append(LpScore(dto.name, dto.game, dto.score))
+        }
+      }
+
       // Insert into SwiftData
       await MainActor.run {
         modelContext.insert(tournament)

@@ -87,9 +87,15 @@ extension IndividualTournamentView: View {
             isCompleteGameViewDisplayed = true
           }
           .disabled(tournament.currentWind == "Done")
-          .buttonBorderShape(.roundedRectangle)
-          .buttonStyle(.borderedProminent)
-          .multilineTextAlignment(.center)
+          .buttonStyle(.glassProminent)
+          .tint(.blue)
+
+          //.controlSize(.large)
+          //.buttonStyle(.glass)
+          //.buttonBorderShape(.roundedRectangle)
+          //.buttonStyle(.borderedProminent)
+          //.multilineTextAlignment(.center)
+          //.glassEffect(.regular.interactive())
         }
       }
       .sheet(isPresented: $isCompleteGameViewDisplayed) {

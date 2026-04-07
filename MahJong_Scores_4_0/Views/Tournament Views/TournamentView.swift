@@ -54,6 +54,7 @@ extension TournamentView: View {
           }
         }
       }
+      //.glassEffect(.regular.interactive())
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
           EditButton()
