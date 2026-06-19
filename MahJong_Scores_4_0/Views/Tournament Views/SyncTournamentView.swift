@@ -14,7 +14,7 @@ struct SyncTournamentView: View {
   @Query private var tournaments: [Tournament]
   
   @State private var apiService = TournamentAPIService()
-  @State private var serverURL = UserDefaults.standard.string(forKey: "serverURL") ?? "http://Rob-Travel-M5.local:8080/"
+  @State private var serverURL = UserDefaults.standard.string(forKey: "serverURL") ?? "http://Rob-Travel-M5.local:8081/"
   @State private var selectedTournaments: Set<Tournament> = []
   @State private var selectedRemoteTournaments: Set<UUID> = []
   @State private var isSyncing = false

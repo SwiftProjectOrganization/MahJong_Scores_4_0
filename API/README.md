@@ -31,7 +31,7 @@ The `TournamentAPIService` class provides methods to interact with the backend:
 
 ```swift
 // Initialize with server URL
-let service = TournamentAPIService(serverURL: "http://localhost:8080")
+let service = TournamentAPIService(serverURL: "http://localhost:8081")
 
 // Upload a tournament
 let dto = tournament.toDTO()
@@ -103,13 +103,13 @@ This configuration tells the SwiftOpenAPI Generator to create both types and cli
    swift run
    ```
 
-The server starts at `http://localhost:8080`
+The server starts at `http://localhost:8081`
 
 ### Syncing from the iOS App
 
 1. Open the MahJong Scores app
 2. From the main tournament list, tap the sync button (↻)
-3. Configure the server URL (default: http://localhost:8080)
+3. Configure the server URL (default: http://localhost:8081)
 4. Select tournaments to upload
 5. Tap "Upload"
 6. Monitor the sync status

@@ -31,61 +31,69 @@ struct CompleteTraditionalGameView {
 extension CompleteTraditionalGameView: View {
     var body: some View {
       Form {
-        Section {
-          Text("Press `Rotate` until the game winner is on the top line. Then enter game scores and press `Save`.")
-            .font(.title2)
+        ZStack {
+          Section {
+            Text("Press `Rotate` until the game winner is on the top line. Then enter game scores and press `Save`.")
+              .font(.title2)
+              .padding()
+              .glassEffect(.clear.tint(.blue).interactive(), in: .rect)
+          }
         }
-        Section {
-          HStack {
-            Text("\(gameWinnerName):")
-            Spacer()
-            TextField("Game score", text: $gameWinnerScore)
-              .focused($focusedField)
-              .multilineTextAlignment(.trailing)
-          }
-          HStack {
-            Text("\(gameSpName):")
-            Spacer()
-            TextField("Game score", text: $gameSpScore)
-              .multilineTextAlignment(.trailing)
-          }
-          HStack {
-            Text("\(gameTpName):")
-            Spacer()
-            TextField("Game score", text: $gameTpScore)
-              .multilineTextAlignment(.trailing)
-          }
-          HStack {
-            Text("\(gameLpName):")
-            Spacer()
-            TextField("Game score", text: $gameLpScore)
-              .multilineTextAlignment(.trailing)
-          }
+          Section {
+            HStack {
+              Text("\(gameWinnerName):")
+              Spacer()
+              TextField("Game score", text: $gameWinnerScore)
+                .focused($focusedField)
+                .multilineTextAlignment(.trailing)
+            }
+            HStack {
+              Text("\(gameSpName):")
+              Spacer()
+              TextField("Game score", text: $gameSpScore)
+                .multilineTextAlignment(.trailing)
+            }
+            HStack {
+              Text("\(gameTpName):")
+              Spacer()
+              TextField("Game score", text: $gameTpScore)
+                .multilineTextAlignment(.trailing)
+            }
+            HStack {
+              Text("\(gameLpName):")
+              Spacer()
+              TextField("Game score", text: $gameLpScore)
+                .multilineTextAlignment(.trailing)
+            }
         }
         .keyboardType(.numberPad)
-        Section {
-          HStack {
-            Spacer()
-            Button("Cancel",
-                   role: .cancel) {
-              isCompleteGameViewDisplayed = false
-              dismiss()
+        ZStack {
+          Rectangle()
+            .fill(Color.orange.gradient)
+          Section {
+            HStack {
+              Spacer()
+              Button("Cancel",
+                     role: .cancel) {
+                isCompleteGameViewDisplayed = false
+                dismiss()
+              }
+              .buttonStyle(.bordered)
+              Button("Rotate") {
+                rotate()
+              }
+              .buttonStyle(.glassProminent)
+              .tint(.orange)
+              Spacer()
+              Button("Save") {
+                isCompleteGameViewDisplayed = false
+                save(tournament)
+              }
+              .disabled(anyFieldEmpty())
+              .buttonStyle(.glassProminent)
+              .tint(.blue)
+              Spacer()
             }
-            .buttonStyle(.bordered)
-            Button("Rotate") {
-              rotate()
-            }
-            .buttonStyle(.glassProminent)
-            .tint(.orange)
-            Spacer()
-            Button("Save") {
-              isCompleteGameViewDisplayed = false
-              save(tournament)
-            }
-            .disabled(anyFieldEmpty())
-            .buttonStyle(.glassProminent)
-            .tint(.blue)
-            Spacer()
           }
         }
       }

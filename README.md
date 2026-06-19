@@ -31,7 +31,7 @@ Create a tournament by tapping the "+". Select the newly created tournament. All
 ### Syncing to Backend Server
 
 1. Tap the sync button (↻) in the toolbar
-2. Configure the server URL (default: http://localhost:8080)
+2. Configure the server URL (default: http://localhost:8081)
 3. Select tournaments to upload
 4. Tap "Upload" to sync
 

@@ -28,58 +28,65 @@ struct TournamentView {
 extension TournamentView: View {
   var body: some View {
     NavigationStack {
-      List {
-        ForEach(tournaments) { tournament in
-          NavigationLink(tournament.title,
-                         value: tournament)
-          .contextMenu {
-            Button {
-              Task {
-                await uploadTournament(tournament)
-              }
-            } label: {
-              Label("Upload to Server", systemImage: "arrow.up.circle")
-            }
-            
-            Button(role: .destructive) {
-              context.delete(tournament)
-            } label: {
-              Label("Delete", systemImage: "trash")
-            }
-          }
-        }
-        .onDelete { indexSet in
-          if let index = indexSet.first {
-            context.delete(tournaments[index])
-          }
-        }
-      }
-      //.glassEffect(.regular.interactive())
-      .toolbar {
-        ToolbarItem(placement: .navigationBarLeading) {
-          EditButton()
-        }
-        ToolbarItem(placement: .navigationBarTrailing) {
-          Button {
-            isShowingSyncView = true
-          } label: {
-            Label("Sync", systemImage: "arrow.triangle.2.circlepath")
-          }
-        }
-        ToolbarItem(placement: .navigationBarTrailing) {
-          Button {
-            isAddingTournament = true
-          } label: {
-            Label("Add Tournament", systemImage: "plus")
-          }
-        }
-      }
-      .navigationTitle("Tournaments")
-      .navigationDestination(for: Tournament.self) { tournament in
-        IndividualTournamentView(tournament: tournament)
-      }
-      Spacer()
+      ZStack {
+        Rectangle()
+          .fill(Color.blue.gradient)
+          .ignoresSafeArea(edges: .all)
 
+        List {
+          ForEach(tournaments) { tournament in
+            NavigationLink(tournament.title,
+                           value: tournament)
+            .padding(10)
+            .glassEffect(.clear.tint(.green).interactive(), in: .buttonBorder)
+            .contextMenu {
+              Button {
+                Task {
+                  await uploadTournament(tournament)
+                }
+              } label: {
+                Label("Upload to Server", systemImage: "arrow.up.circle")
+              }
+              
+              Button(role: .destructive) {
+                context.delete(tournament)
+              } label: {
+                Label("Delete", systemImage: "trash")
+              }
+            }
+          }
+          
+          .onDelete { indexSet in
+            if let index = indexSet.first {
+              context.delete(tournaments[index])
+            }
+          }
+        }
+        .toolbar {
+          ToolbarItem(placement: .navigationBarLeading) {
+            EditButton()
+          }
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+              isShowingSyncView = true
+            } label: {
+              Label("Sync", systemImage: "arrow.triangle.2.circlepath")
+            }
+          }
+          ToolbarItem(placement: .navigationBarTrailing) {
+            Button {
+              isAddingTournament = true
+            } label: {
+              Label("Add Tournament", systemImage: "plus")
+            }
+          }
+        }
+        .navigationTitle("Tournaments")
+        .navigationDestination(for: Tournament.self) { tournament in
+          IndividualTournamentView(tournament: tournament)
+        }
+        Spacer()
+      }
     }
     .sheet(isPresented: $isAddingTournament) {
         AddTournamentView()
