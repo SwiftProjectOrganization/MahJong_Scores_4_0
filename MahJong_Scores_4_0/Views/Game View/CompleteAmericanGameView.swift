@@ -167,18 +167,12 @@ func updateAmericanTournamentScore(_ tournament: Tournament,
       }
     }
   }
-  print(tournament.scheduleItem)
-  //tournament.gameWinnerName == tournament.windPlayer!.last
   let lastWindPlayer = tournament.windPlayer!.last
-  print([gameWinnerName, lastWindPlayer])
-  print(gameWinnerName != lastWindPlayer ? "true" : "false")
-  printTournament(tournament)
   if ((gameWinnerName != lastWindPlayer) ||
       gameWinnerScore == 0) {
     tournament.scheduleItem += 1
     tournament.updateTournamentStatus()
   }
   tournament.updateGameScores()
-  printTournament(tournament)
 }
 
