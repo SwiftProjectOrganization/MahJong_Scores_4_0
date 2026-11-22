@@ -139,12 +139,10 @@ func updateAmericanTournamentScore(_ tournament: Tournament,
                                    _ jokersPresent: Int,
                                    _ lastTileSource: String) {
   var score = gameWinnerScore
-  print(jokersPresent)
   if jokersPresent == 1 {
     score *= 2
   }
   if gameWinnerName == lastTileSource {
-    print([gameWinnerName, lastTileSource])
     // Game winner didn draw last tile
     for i in 0...3 {
       let pi = tournament.players![i]
@@ -156,7 +154,6 @@ func updateAmericanTournamentScore(_ tournament: Tournament,
     }
   } else {
     // Game winner didn't draw last tile
-    print([gameWinnerName, lastTileSource])
     for i in 0...3 {
       let pi = tournament.players![i]
       if pi == gameWinnerName {
@@ -170,8 +167,18 @@ func updateAmericanTournamentScore(_ tournament: Tournament,
       }
     }
   }
-  tournament.scheduleItem += 1
-  tournament.updateTournamentStatus()
+  print(tournament.scheduleItem)
+  //tournament.gameWinnerName == tournament.windPlayer!.last
+  let lastWindPlayer = tournament.windPlayer!.last
+  print([gameWinnerName, lastWindPlayer])
+  print(gameWinnerName != lastWindPlayer ? "true" : "false")
+  printTournament(tournament)
+  if ((gameWinnerName != lastWindPlayer) ||
+      gameWinnerScore == 0) {
+    tournament.scheduleItem += 1
+    tournament.updateTournamentStatus()
+  }
   tournament.updateGameScores()
+  printTournament(tournament)
 }
 
