@@ -18,6 +18,8 @@ struct AddTournamentView {
   @State var selectedRuleSet: RuleSetType = .traditional
   @AppStorage("rotateClockwise") private var rotateClockwise: Bool = false
   @AppStorage("ruleSet") private var ruleSet: String = "Traditional"
+  @AppStorage("windPlayerContinuesOnWin") private var windPlayerContinuesOnWin: Bool = false
+  @AppStorage("windPlayerContinuesOnDraw") private var windPlayerContinuesOnDraw: Bool = false
   @Environment(\.scenePhase) private var scenePhase
   @FocusState private var focusedField
   @Environment(\.dismiss) private var dismiss
@@ -57,6 +59,15 @@ extension AddTournamentView: View {
       Spacer()
       RuleSetPickerView(selectedRuleSet: $selectedRuleSet)
       Spacer()
+      if selectedRuleSet == .american {
+        VStack {
+          Toggle("Wind player continues on win", isOn: $windPlayerContinuesOnWin)
+          Toggle("Wind player continues on draw", isOn: $windPlayerContinuesOnDraw)
+        }
+        .font(.title)
+        .padding(.horizontal, 40)
+        Spacer()
+      }
       HStack {
         Spacer()
         Button("Cancel",

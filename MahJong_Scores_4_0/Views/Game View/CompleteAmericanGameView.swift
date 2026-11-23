@@ -21,6 +21,8 @@ struct CompleteAmericanGameView {
   @State private var gameLpScore: String = ""
   @State var jokersPresent: JokersPresentType = JokersPresentType.no
   @State var lastTileSource: LastTileType = LastTileType.firstPlayer
+  @AppStorage("windPlayerContinuesOnDraw") private var windPlayerContinuesOnDraw: Bool = false
+  @AppStorage("windPlayerContinuesOnWin") private var windPlayerContinuesOnWin: Bool = false
   @Environment(\.scenePhase) private var scenePhase
   @FocusState private var focusedField
   @Environment(\.dismiss) private var dismiss
@@ -66,6 +68,11 @@ extension CompleteAmericanGameView: View {
                        role: .cancel) {
                   isCompleteGameViewDisplayed = false
                   dismiss()
+                }
+                .buttonStyle(.bordered)
+                Spacer()
+                Button("Draw") {
+                  draw(tournament)
                 }
                 .buttonStyle(.bordered)
                 Spacer()
@@ -117,6 +124,18 @@ extension CompleteAmericanGameView {
 }
 
 extension CompleteAmericanGameView {
+  private func draw(_ tournament: Tournament) {
+    isCompleteGameViewDisplayed = false
+    if !windPlayerContinuesOnDraw {
+      tournament.scheduleItem += 1
+      tournament.updateTournamentStatus()
+    }
+    focusedField = false
+    dismiss()
+  }
+}
+
+extension CompleteAmericanGameView {
   private func save(_ tournament: Tournament) {
     tournament.lastGame! += 1
     tournament.gameWinnerName = gameWinnerName
@@ -127,7 +146,8 @@ extension CompleteAmericanGameView {
     updateAmericanTournamentScore(tournament, gameWinnerName, 
                                   Int(gameWinnerScore)!,
                                   Int(jokersPresent.rawValue),
-                                  tournament.players![lastTileSource.rawValue])
+                                  tournament.players![lastTileSource.rawValue],
+                                  windPlayerContinuesOnWin)
     focusedField = false
     dismiss()
   }
@@ -137,7 +157,8 @@ func updateAmericanTournamentScore(_ tournament: Tournament,
                                    _ gameWinnerName: String,
                                    _ gameWinnerScore: Int,
                                    _ jokersPresent: Int,
-                                   _ lastTileSource: String) {
+                                   _ lastTileSource: String,
+                                   _ windPlayerContinuesOnWin: Bool) {
   var score = gameWinnerScore
   if jokersPresent == 1 {
     score *= 2
@@ -168,8 +189,7 @@ func updateAmericanTournamentScore(_ tournament: Tournament,
     }
   }
   let lastWindPlayer = tournament.windPlayer!.last
-  if ((gameWinnerName != lastWindPlayer) ||
-      gameWinnerScore == 0) {
+  if !windPlayerContinuesOnWin || gameWinnerName != lastWindPlayer {
     tournament.scheduleItem += 1
     tournament.updateTournamentStatus()
   }
