@@ -56,6 +56,10 @@ extension GameGraphView: View {
           .foregroundStyle(by: .value("Player", players.name))
       }
     }
-    .frame(height: 200)
+    // Size the chart relative to the visible height of the enclosing List, so
+    // short displays (e.g. iPhone Duo outer display) keep room for the player rows.
+    .containerRelativeFrame(.vertical) { length, _ in
+      min(200, max(120, length * 0.3))
+    }
   }
 }

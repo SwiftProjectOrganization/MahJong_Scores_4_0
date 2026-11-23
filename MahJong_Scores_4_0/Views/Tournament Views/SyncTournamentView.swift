@@ -293,6 +293,8 @@ struct SyncTournamentView: View {
       tournament.rotateClockwise = tournamentDTO.rotateClockwise
       tournament.ruleSet = tournamentDTO.ruleSet
       tournament.startDate = tournamentDTO.startDate
+      tournament.windPlayerContinuesOnWin = tournamentDTO.windPlayerContinuesOnWin
+      tournament.windPlayerContinuesOnDraw = tournamentDTO.windPlayerContinuesOnDraw
       tournament.scheduleItem = tournamentDTO.scheduleItem
       tournament.lastGame = tournamentDTO.lastGame
       tournament.windPlayer = tournamentDTO.windPlayer

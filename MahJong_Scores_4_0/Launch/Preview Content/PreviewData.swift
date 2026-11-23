@@ -44,6 +44,7 @@ fileprivate func addTournaments(to container: ModelContainer, tournaments: [Tour
   context.insert(tournament)
   tournament = tournamentsSetup("Fleur", "Cleo", "Lee", "Mick")
   tournament.ruleSet = RuleSetType.american.description
+  tournament.windPlayerContinuesOnWin = true
   context.insert(tournament)
   tournament = tournamentsSetup("Fem", "Juul", "Luuk", "Timme")
   context.insert(tournament)

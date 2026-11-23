@@ -14,15 +14,31 @@ struct TournamentTitleView {
 extension TournamentTitleView: View {
   var body: some View {
     VStack {
-      HStack {
-        Text("\(tournament.ruleSet!): ")
-        Spacer()
-        Text(tournament.currentWind!)
-          .font(.headline)
-          .foregroundColor(.blue)
-        Spacer()
-        Text(tournament.startDate!)
-        Spacer()
+      if let rules = tournament.windPlayerRules {
+        // Put the rules on the same row when there is room, otherwise on a small line below
+        ViewThatFits(in: .horizontal) {
+          HStack {
+            headerRow
+            Text(rules)
+              .font(.caption)
+              .foregroundStyle(.secondary)
+              .lineLimit(1)
+          }
+          VStack(spacing: 2) {
+            HStack {
+              headerRow
+            }
+            Text(rules)
+              .font(.caption)
+              .foregroundStyle(.secondary)
+              .lineLimit(1)
+              .minimumScaleFactor(0.8)
+          }
+        }
+      } else {
+        HStack {
+          headerRow
+        }
       }
       Spacer()
       HStack {
@@ -63,6 +79,21 @@ extension TournamentTitleView: View {
         }
       }
     }
+  }
+}
+
+extension TournamentTitleView {
+  /// Rule set, current wind and start date; meant to be placed inside an HStack.
+  @ViewBuilder
+  private var headerRow: some View {
+    Text("\(tournament.ruleSet!): ")
+    Spacer()
+    Text(tournament.currentWind!)
+      .font(.headline)
+      .foregroundColor(.blue)
+    Spacer()
+    Text(tournament.startDate!)
+    Spacer()
   }
 }
 

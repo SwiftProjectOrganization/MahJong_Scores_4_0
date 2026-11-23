@@ -21,8 +21,6 @@ struct CompleteAmericanGameView {
   @State private var gameLpScore: String = ""
   @State var jokersPresent: JokersPresentType = JokersPresentType.no
   @State var lastTileSource: LastTileType = LastTileType.firstPlayer
-  @AppStorage("windPlayerContinuesOnDraw") private var windPlayerContinuesOnDraw: Bool = false
-  @AppStorage("windPlayerContinuesOnWin") private var windPlayerContinuesOnWin: Bool = false
   @Environment(\.scenePhase) private var scenePhase
   @FocusState private var focusedField
   @Environment(\.dismiss) private var dismiss
@@ -126,7 +124,7 @@ extension CompleteAmericanGameView {
 extension CompleteAmericanGameView {
   private func draw(_ tournament: Tournament) {
     isCompleteGameViewDisplayed = false
-    if !windPlayerContinuesOnDraw {
+    if !(tournament.windPlayerContinuesOnDraw ?? false) {
       tournament.scheduleItem += 1
       tournament.updateTournamentStatus()
     }
@@ -147,7 +145,7 @@ extension CompleteAmericanGameView {
                                   Int(gameWinnerScore)!,
                                   Int(jokersPresent.rawValue),
                                   tournament.players![lastTileSource.rawValue],
-                                  windPlayerContinuesOnWin)
+                                  tournament.windPlayerContinuesOnWin ?? false)
     focusedField = false
     dismiss()
   }

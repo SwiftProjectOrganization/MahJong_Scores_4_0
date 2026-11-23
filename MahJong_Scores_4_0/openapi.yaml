@@ -132,6 +132,10 @@ components:
           type: string
         startDate:
           type: string
+        windPlayerContinuesOnWin:
+          type: boolean
+        windPlayerContinuesOnDraw:
+          type: boolean
         scheduleItem:
           type: integer
         lastGame:

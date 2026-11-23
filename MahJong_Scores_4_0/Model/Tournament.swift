@@ -18,7 +18,9 @@ public class Tournament {
   var rotateClockwise: Bool?
   var ruleSet: String?
   var startDate: String?
-  
+  var windPlayerContinuesOnWin: Bool?
+  var windPlayerContinuesOnDraw: Bool?
+
   // Tournament wide values
   var scheduleItem: Int = 0
   var lastGame: Int?
@@ -67,6 +69,8 @@ public class Tournament {
        _ winds: [String]? = ["East", "South", "West", "North"]) {
     self.rotateClockwise = true
     self.ruleSet = "INTERNATIONAL"
+    self.windPlayerContinuesOnWin = false
+    self.windPlayerContinuesOnDraw = false
     self.startDate = dateToString()
     self.lastGame = -1
     self.fpName = fpName
@@ -87,7 +91,21 @@ public class Tournament {
 
 extension Tournament {
     var title: String {
-      "\(self.ruleSet!) tournament: \(currentWind!) \n \(startDate!):\(fpName!) \(spName!) \(tpName!) \(lpName!)"
+      var result = "\(self.ruleSet!) tournament: \(currentWind!) \n\(startDate!):\(fpName!) \(spName!) \(tpName!) \(lpName!)"
+      if let rules = windPlayerRules {
+        result += "\n(\(rules))"
+      }
+      return result
+    }
+}
+
+extension Tournament {
+    /// Short description of the wind-player rules; nil for non-American tournaments.
+    var windPlayerRules: String? {
+      guard ruleSet == RuleSetType.american.description else { return nil }
+      let onWin = (windPlayerContinuesOnWin ?? false) ? "stays" : "rotates"
+      let onDraw = (windPlayerContinuesOnDraw ?? false) ? "stays" : "rotates"
+      return "East \(onWin) on win, \(onDraw) on draw"
     }
 }
 

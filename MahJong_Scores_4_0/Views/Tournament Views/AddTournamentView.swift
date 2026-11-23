@@ -111,6 +111,8 @@ extension AddTournamentView {
     
     tournament.ruleSet = selectedRuleSet.description
     tournament.rotateClockwise = (selectedRotation == RotateClockwiseType.clockwise ? true : false)
+    tournament.windPlayerContinuesOnWin = selectedRuleSet == .american && windPlayerContinuesOnWin
+    tournament.windPlayerContinuesOnDraw = selectedRuleSet == .american && windPlayerContinuesOnDraw
     
     let tmp2 = tournament.lastGame! + 1
     tournament.lastGame! = tmp2

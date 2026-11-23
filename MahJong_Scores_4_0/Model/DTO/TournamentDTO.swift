@@ -27,7 +27,9 @@ public struct TournamentDTO: Codable, Identifiable {
     var rotateClockwise: Bool?
     var ruleSet: String?
     var startDate: String?
-    
+    var windPlayerContinuesOnWin: Bool?
+    var windPlayerContinuesOnDraw: Bool?
+
     // Tournament wide values
     var scheduleItem: Int
     var lastGame: Int?
@@ -58,6 +60,7 @@ public struct TournamentDTO: Codable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case id, rotateClockwise, ruleSet, startDate
+        case windPlayerContinuesOnWin, windPlayerContinuesOnDraw
         case scheduleItem, lastGame
         case fpName, spName, tpName, lpName
         case windPlayer, currentWind, players, winds, gameWinnerName
@@ -74,6 +77,8 @@ extension Tournament {
             rotateClockwise: self.rotateClockwise,
             ruleSet: self.ruleSet,
             startDate: self.startDate,
+            windPlayerContinuesOnWin: self.windPlayerContinuesOnWin,
+            windPlayerContinuesOnDraw: self.windPlayerContinuesOnDraw,
             scheduleItem: self.scheduleItem,
             lastGame: self.lastGame,
             fpName: self.fpName,
